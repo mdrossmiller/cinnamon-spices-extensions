@@ -333,16 +333,16 @@ function getUsableScreenArea(monitor) {
     if (!panel.isHideable()) {
       switch (panel.panelPosition) {
         case Panel.PanelLoc.top:
-          top += panel.height;
+          top += panel._getScaledPanelHeight();
           break;
         case Panel.PanelLoc.bottom:
-          bottom -= panel.height;
+          bottom -= panel._getScaledPanelHeight();
           break;
         case Panel.PanelLoc.left:
-          left += panel.height; // even vertical panels use 'height'
+          left += panel._getScaledPanelHeight(); // even vertical panels use 'height'
           break;
         case Panel.PanelLoc.right:
-          right -= panel.height;
+          right -= panel._getScaledPanelHeight();
           break;
       }
     }
